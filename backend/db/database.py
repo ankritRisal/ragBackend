@@ -1,5 +1,4 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
-from sqlalchemy.future import select
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 from backend.schemas.model import DocumentMetadata, ChunkMetadata, Base

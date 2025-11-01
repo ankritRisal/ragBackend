@@ -1,7 +1,6 @@
 
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
-import uuid
 
 from config.settings import Settings
 from qdrant_client import QdrantClient

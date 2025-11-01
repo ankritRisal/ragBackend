@@ -2,7 +2,7 @@ from backend.db.vector import create_vector_store
 from backend.services.embedding import EmbeddingService
 from backend.db.database import DatabaseManager
 from backend.db.chatMemory import RedisMemoryManager
-from backend.services.text_processing import TextExtractor, ChunkingService
+from backend.services.text_processing import TextExtractor
 from backend.llmModels.llm import create_llm_service
 from backend.llmModels.rag import CustomRAGService
 from config.settings import Settings
@@ -24,20 +24,6 @@ llm_service = create_llm_service()
 text_extractor = TextExtractor()
 
         
-# rag_service: Optional[CustomRAGService] = None
-
-# # Global services
-# settings = Settings()
-# vector_store = create_vector_store()
-# embedding_service = EmbeddingService(settings.embedding_model)
-# memory_manager = RedisMemoryManager(
-#     host=settings.redis_host,
-#     port=settings.redis_port,
-#     db=settings.redis_db,
-#     password=settings.redis_password,
-#     ttl=settings.redis_ttl
-# )
-# llm_service = create_llm_service()
 rag_service: Optional[CustomRAGService] = CustomRAGService(
     vector_store=vector_store,
     embedding_service=embedding_service,

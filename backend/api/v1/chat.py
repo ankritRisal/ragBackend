@@ -1,15 +1,8 @@
 from fastapi import APIRouter, HTTPException
-from sqlalchemy.ext.asyncio import AsyncSession
-from typing import List, Dict, Any
+from typing import Dict, Any
 from backend.schemas.chatSchemas import ChatRequest, ChatResponse, ChatHistoryResponse, BookingRequest, BookingResponse
-from backend.llmModels.rag import CustomRAGService
-from backend.db.chatMemory import RedisMemoryManager
-from backend.db.database import DatabaseManager
 from backend.db.database import BookingInfo
-from backend.db.vector import create_vector_store
-from backend.services.embedding import EmbeddingService
-from backend.llmModels.llm import create_llm_service
-from config.settings import Settings
+
 from backend.services.services import memory_manager, rag_service, db_manager
 
 import uuid

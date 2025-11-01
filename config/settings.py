@@ -20,10 +20,6 @@ class Settings(BaseSettings):
     vector_db_type: str = "qdrant" 
 
 
-# database_url: str = "postgresql+asyncpg://ingestion:your_password@postgres:5432/ragdb"
-# redis_host: str = "redis"
-# qdrant_url: str = "http://qdrant:6333"
-
     # Qdrant
     qdrant_url: str = "http://qdrant:6333"
     qdrant_api_key: str = ""
@@ -42,7 +38,6 @@ class Settings(BaseSettings):
     chunk_size: int = 500
     chunk_overlap: int = 50
 
-###############################################
     # Redis
     redis_host: str = "redis"
     redis_port: int = 6379

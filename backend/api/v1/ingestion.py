@@ -1,5 +1,4 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, APIRouter, Form
-from fastapi.responses import JSONResponse
 from typing import Optional
 from pathlib import Path
 
@@ -12,7 +11,7 @@ from backend.services.text_processing import  ChunkingService
 from backend.services.services import db_manager, vector_store, embedding_service, text_extractor, settings
 import logging
 import uuid
-import asyncio
+
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

@@ -1,6 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, Depends, Form
-from fastapi.responses import JSONResponse
-from typing import Optional
+from fastapi import FastAPI
 from pathlib import Path
 from datetime import datetime
 
@@ -8,22 +6,12 @@ from datetime import datetime
 import sys
 sys.path.append(str(Path(__file__).parent.parent))
 
-from config.settings import Settings
-from backend.db.database import DatabaseManager
-from backend.schemas.model import DocumentUploadResponse
-from backend.db.vector import create_vector_store
-from backend.services.embedding import EmbeddingService
-from backend.services.text_processing import TextExtractor, ChunkingService
-from backend.services.services import memory_manager, vector_store, embedding_service, llm_service, rag_service, db_manager, settings
- 
+
+from backend.services.services import memory_manager, vector_store, embedding_service, llm_service, rag_service, db_manager, settings 
 from backend.llmModels.rag import CustomRAGService
-from backend.db.chatMemory import RedisMemoryManager
-from backend.llmModels.llm import create_llm_service
 
 
 import logging
-import uuid
-import asyncio
 
 logger = logging.getLogger(__name__)
 

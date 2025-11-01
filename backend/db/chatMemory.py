@@ -1,7 +1,7 @@
 import json
 from typing import List, Optional
 import redis.asyncio as redis
-from datetime import timedelta, datetime
+from datetime import datetime
 
 
 class RedisMemoryManager:
